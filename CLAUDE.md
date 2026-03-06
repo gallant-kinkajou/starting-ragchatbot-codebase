@@ -20,7 +20,7 @@ The app is served at `http://localhost:8000`. The frontend is served as static f
 
 Requires a `.env` file in the project root:
 ```
-ANTHROPIC_API_KEY=your-anthropic-api-key-here
+AWS_PROFILE=your_aws_profile_here
 ```
 
 ## Architecture
