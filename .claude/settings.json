@@ -1,0 +1,63 @@
+{
+    "permissions": {
+        "deny": [
+            "**/.env*",
+            "**/*.key",
+            "**/*.pem",
+            "**/*.p12",
+            "**/*.jks",
+            "**/*.keystore",
+            "**/secrets/**",
+            "**/private/**",
+            "**/.aws/**",
+            "**/.ssh/**",
+            "**/cert/**",
+            "**/certs/**",
+            "**/keystore/**",
+            "**/application-prd.yml",
+            "**/application-prod.yml",
+            "**/application-production.yml",
+            "**/config/database.yml",
+            "**/config/database-prod.yml",
+            "**/*-prod.properties",
+            "**/*-production.properties",
+            "**/terraform.tfstate*",
+            "**/terraform.tfvars",
+            "**/*.tfvars",
+            "**/docker-compose.prod.yml",
+            "**/kubernetes/**/prod/**",
+            "**/k8s/**/prod/**",
+            "**/.kube/**",
+            "**/backup/**/*.sql",
+            "**/dumps/**/*.sql"
+        ],
+        "require_confirmation": [
+            "**/src/main/resources/application*.yml",
+            "**/pom.xml",
+            "**/package.json",
+            "**/Dockerfile*",
+            "**/docker-compose*.yml",
+            "**/*.sh",
+            "**/kubernetes/**",
+            "**/k8s/**",
+            "**/infrastructure/**"
+        ]
+    },
+    "tools": {
+        "bash": {
+            "require_confirmation_for": [
+                "rm *",
+                "git push*",
+                "mvn deploy*",
+                "docker push*",
+                "kubectl apply*",
+                "terraform apply*"
+            ]
+        }
+    },
+    "audit_logging": true,
+    "default_behavior": {
+        "auto_save": false,
+        "backup_before_edit": true
+    }
+}
